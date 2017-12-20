@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendRecommendViewController">
+            <connections>
+                <outlet property="friendRecommedLeftTableView" destination="BiT-7D-w7s" id="UZG-ao-4y9"/>
+                <outlet property="friendRecommedRightTableView" destination="wQa-2K-qKh" id="6H2-R3-r4j"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="3B8-lp-mND"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="FriendRecommendLeftTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BiT-7D-w7s">
+                    <rect key="frame" x="0.0" y="0.0" width="80" height="568"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="YNb-f2-gvF"/>
+                    </constraints>
+                    <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="wQa-2K-qKh">
+                    <rect key="frame" x="80" y="64" width="240" height="504"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="BiT-7D-w7s" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="5uY-d0-Efc"/>
+                <constraint firstItem="BiT-7D-w7s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CdX-VU-qHI"/>
+                <constraint firstAttribute="bottom" secondItem="wQa-2K-qKh" secondAttribute="bottom" id="K7f-kU-is4"/>
+                <constraint firstAttribute="bottom" secondItem="BiT-7D-w7s" secondAttribute="bottom" id="UKf-XX-H96"/>
+                <constraint firstAttribute="trailing" secondItem="wQa-2K-qKh" secondAttribute="trailing" id="neD-nQ-08h"/>
+                <constraint firstItem="wQa-2K-qKh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="64" id="q6d-ET-wuN"/>
+                <constraint firstItem="wQa-2K-qKh" firstAttribute="leading" secondItem="BiT-7D-w7s" secondAttribute="trailing" id="rGc-Y0-Z9D"/>
+            </constraints>
+            <point key="canvasLocation" x="361" y="16"/>
+        </view>
+    </objects>
+</document>
