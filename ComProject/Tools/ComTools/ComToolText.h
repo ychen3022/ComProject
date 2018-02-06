@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, ComFont) {
+typedef NS_ENUM(NSInteger, ComFont) {
     ComFont1 = 36,
     ComFont2 = 34,
     ComFont3 = 32,

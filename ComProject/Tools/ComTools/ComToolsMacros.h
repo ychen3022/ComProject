@@ -1,13 +1,13 @@
 //
-//  ComToolMacros.h
+//  ComToolsMacros.h
 //  ComProject
 //
 //  Created by 陈园 on 2017/12/20.
 //  Copyright © 2017年 陈园. All rights reserved.
 //
 
-#ifndef ComToolMacros_h
-#define ComToolMacros_h
+#ifndef ComToolsMacros_h
+#define ComToolsMacros_h
 
 /** 获取屏幕的宽度*/
 #define KScreenW [UIScreen mainScreen].bounds.size.width
@@ -48,4 +48,4 @@
 #endif
 
 
-#endif /* ComToolMacros_h */
+#endif /* ComToolsMacros_h */

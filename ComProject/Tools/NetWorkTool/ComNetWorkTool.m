@@ -33,6 +33,7 @@ static NSString *Com_CheckCode = @"aXNvaHVhbmdzaGl6eHl5";
 static NSString *Com_LoginVCName = @"";
 
 
+
 @implementation ComNetWorkTool
 
 #pragma mark -单利
@@ -100,6 +101,7 @@ static ComNetWorkTool *_instance;
 }
 
 
+
 #pragma mark -获取当前默认的服务器地址
 - (NSString *)defaultUrlStr{
     return Com_DefaultUrlStr;
@@ -149,13 +151,10 @@ static ComNetWorkTool *_instance;
                 }
                     break;
             }
-            
             if (netWorkConnect==NO) {
                 [ComMessageBox showMessageBoxWithStyle:comMessageBoxStyleHUD title:@"提示" message:noteStr];
             }
-            
         }];
-        
         [[AFNetworkReachabilityManager sharedManager] startMonitoring];
     }else {
         [[AFNetworkReachabilityManager sharedManager] stopMonitoring];
@@ -178,7 +177,6 @@ static ComNetWorkTool *_instance;
     loadingIndicatorStyle:(ComLoadingIndicatorStyle)indicatorStyle
              successBlock:(RequestSuccessBlock)successBlock
              failureBlock:(RequestFailBlock)failBlock{
-    
 //    拼接成完整的请求参数
 //    static NSString *sDeviceUUIDStr = nil;
 //    if (!sDeviceUUIDStr) {
@@ -200,7 +198,6 @@ static ComNetWorkTool *_instance;
 //   [manager.requestSerializer setValue:Com_CheckCode forHTTPHeaderField:@"K"];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"application/json",@"text/json",@"text/javascript",@"text/html", nil];
     manager.responseSerializer = [AFJSONResponseSerializer serializer];
-    
     switch (method) {
         case POST:
         {

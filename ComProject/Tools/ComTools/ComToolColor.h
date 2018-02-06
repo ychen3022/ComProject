@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, ComColor) {
+typedef NS_ENUM(NSInteger, ComColor) {
     ComColorRed = 0xe83c36,
     ComColorWhite = 0xffffff,
     ComColorLightWhite = 0xf3f3f3,

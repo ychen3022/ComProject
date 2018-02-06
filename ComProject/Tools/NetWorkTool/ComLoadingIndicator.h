@@ -10,29 +10,18 @@
 
 @interface ComLoadingIndicator : UIView
 
-
-/**
- *  加载指示器的样式
- */
+/** 加载指示器的样式*/
 typedef enum{
     comLoadingIndicatorStyleNone,//不显示加载指示器
     comLoadingIndicatorStyleGif,//显示gif加载指示器，照片可以替换
 }ComLoadingIndicatorStyle;
 
 
-
-/**
- *  创建加载指示器传回的block
- *
- *  @param returnValue  returnValue,主要是点击加载指示器，取消加载
- */
+/** 创建加载指示器传回的block*/
 typedef void(^ComReturnValue)(id returnValue);
 
 
-
-/**
- *  开始显示加载指示器
- */
+/** 开始显示加载指示器*/
 - (void)startLoading;
 
 

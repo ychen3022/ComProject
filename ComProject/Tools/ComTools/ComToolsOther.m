@@ -24,7 +24,6 @@
             }
         }
     }
-    
     NSArray *viewsArray = [window subviews];
     if([viewsArray count] > 0){
         UIView *frontView = [viewsArray objectAtIndex:0];

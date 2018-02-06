@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSUInteger, ComCR) {
+typedef NS_ENUM(NSInteger, ComCR) {
     ComCR1 = 5,
     ComCR2 = 10
 };

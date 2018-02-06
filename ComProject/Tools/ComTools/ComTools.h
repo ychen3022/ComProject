@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CLLocation.h>
-#import "ComToolMacros.h"
+#import "ComToolsMacros.h"
 #import "ComToolColor.h"
 #import "ComToolText.h"
 #import "ComToolView.h"

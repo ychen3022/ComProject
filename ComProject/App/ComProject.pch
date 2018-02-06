@@ -14,6 +14,8 @@
 #import "ComTools.h"
 #import "ComNetWorkTool.h"
 #import "UIView+Ext.h"
+#import "ComAlertDialogTool.h"
+
 #import <pop/POP.h>
 #import "MJExtension.h"
 #import "MBProgressHUD.h"
