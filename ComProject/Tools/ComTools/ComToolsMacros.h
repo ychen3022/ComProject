@@ -36,6 +36,8 @@
 /** 当前系统大于等于iOS8*/
 #define kiOS8_Or_Later  ( [[[UIDevice currentDevice] systemVersion] compare:@"8.0" options:NSNumericSearch] != NSOrderedAscending )
 
+/** 当前机型是否为IPhoneX*/
+#define  ISIPhoneX (((KScreenW == 375.f && KScreenH == 812.f)||(KScreenW == 414.f && KScreenH == 896.f)) ? YES : NO)
 
 
 /** 自定义日志打印的NSLog*/

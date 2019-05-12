@@ -7,7 +7,19 @@
 //
 
 #import "ComBaseViewController.h"
+#import <WebKit/WKWebView.h>
+
+
+typedef NS_ENUM(NSUInteger, HyBirdStyle) {
+    HyBirdStyle_LikeNative=1, //非全屏显示
+    HyBirdStyle_Full=2 //全屏显示
+};
 
 @interface ComBaseWebViewController : ComBaseViewController
 
+@property (nonatomic, strong) WKWebView *wkWebView;
+@property (nonatomic, strong) NSString *loadUrl;
+
+-(void)setupwkWebViewWithStyle:(HyBirdStyle)style;
+-(void)loadUrl:(NSString *)loadUrl;
 @end

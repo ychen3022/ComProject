@@ -45,6 +45,9 @@
 #pragma mark - 底部tabbar高度
 -(CGFloat)tabBarHeight{
     CGFloat tabBar_height=self.tabBarController.tabBar.height;
+    if (ISIPhoneX) {
+        tabBar_height = 83;
+    }
     return tabBar_height;
 }
 
@@ -58,21 +61,21 @@
 }
 
 
-#pragma mark -初始化导航栏文字标题
+#pragma mark -设置导航栏文字标题
 -(void)initNavigationTitleViewWithTitle:(NSString *)title{
     if (![ComTools isBlankString:title]) {
         self.navigationItem.title = title;
     }
 }
 
-#pragma mark -初始化导航栏照片标题
+#pragma mark -设置导航栏照片标题
 -(void)initNavigationTitleViewWithImage:(NSString *)imageName{
     if (![ComTools isBlankString:imageName]) {
        self.navigationItem.titleView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:imageName]];
     }
 }
 
-#pragma mark -初始化导航栏TextField标题
+#pragma mark -设置导航栏TextField标题
 -(void)initNavigationTitleViewTextFieldWithLeftImage:(NSString *)leftImgName PlaceHolderText:(NSString *)placeHolder Delegate:(id)textFieldDelegate{
     UITextField *searchTextField=[[UITextField alloc] initWithFrame:CGRectMake(0, 0, 250, 30)];
     [searchTextField setBorderStyle:UITextBorderStyleRoundedRect];
@@ -92,17 +95,17 @@
 
 
 
-#pragma mark -初始化导航栏返回按钮无标题
+#pragma mark -设置导航栏左侧(返回)按钮无标题
 -(void)initNavigationLeftButtonBack{
      [self initNavigationLeftButtonBackWithTitle:@"返回"];
 }
 
-#pragma mark -初始化导航栏返回按钮及标题
+#pragma mark -设置导航栏左侧(返回)按钮及标题
 -(void)initNavigationLeftButtonBackWithTitle:(NSString *)title{
     [self initNavigationLeftButtonBackWithTitle:title imageName:@"navigationButtonReturn" titleColor:@"#333333"];
 }
 
-#pragma mark -初始化导航栏返回按钮及标题
+#pragma mark -设置导航栏左侧(返回)按钮及标题、图片、颜色
 -(void)initNavigationLeftButtonBackWithTitle:(NSString *)title imageName:(NSString *)imageName titleColor:(NSString *)titleColor{
     UIButton *backBtn=[[UIButton alloc] init];
     [backBtn setTitle:title forState:UIControlStateNormal];
@@ -119,14 +122,14 @@
     self.navigationItem.leftBarButtonItem=[[UIBarButtonItem alloc] initWithCustomView:backBtn];
 }
 
-#pragma mark -导航栏返回按钮返回动作
+#pragma mark -导航栏左侧(返回)按钮返回动作
 -(void)backTo{
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 
 
-#pragma mark -自定义导航栏左侧按钮
+#pragma mark -自定义导航栏左侧(非返回)按钮
 -(void)initNavigationLeftButtonWithTitle:(NSString *)title TitleColor:(UIColor *)titleColor Image:(NSString *)imageName{
     if ([ComTools isBlankString:title]) {
         UIButton *navLeftBtn=[[UIButton alloc] init];
@@ -143,9 +146,9 @@
     }
 }
 
-#pragma mark -自定义导航栏左侧按钮返回动作
+#pragma mark -自定义导航栏左侧(非返回)按钮动作
 -(void)doNavigationLeftBtnAction{
-    NSLog(@"自定义导航栏左侧按钮返回动作");
+    NSLog(@"自定义导航栏左侧(非返回)按钮动作");
 }
 
 
@@ -171,9 +174,9 @@
     }
 }
 
-#pragma mark -自定义导航栏右侧按钮返回动作
+#pragma mark -自定义导航栏右侧按钮动作
 -(void)doNavigationRightBtnAction{
-    NSLog(@"自定义导航栏右侧按钮返回动作");
+    NSLog(@"自定义导航栏右侧按钮动作");
 }
 
 

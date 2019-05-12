@@ -95,7 +95,7 @@
 #pragma mark -添加头部菜单视图
 -(ComTopMenuView *)setupTopMenuView{
     if (!_topMenuView) {
-        _topMenuView=[[ComTopMenuView alloc] initWithFrame:CGRectMake(0, 64,[UIScreen mainScreen].bounds.size.width ,40)];
+        _topMenuView=[[ComTopMenuView alloc] initWithFrame:CGRectMake(0, self.topBarHeight,[UIScreen mainScreen].bounds.size.width ,40)];
         //这个位置可以设置topMenuView的样式
         _topMenuView.titleSelectedColor=[UIColor orangeColor];
         _titlesArr = @[@"精选", @"电视剧", @"电影", @"综艺", @"NBA", @"新闻", @"娱乐", @"音乐"];
@@ -137,7 +137,7 @@
 #pragma mark -创建scrollView视图,是负责水平滚动的
 -(UIScrollView *)setupScrollView{
     if (!_scrollView) {
-        _scrollView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height)];
+        _scrollView=[[UIScrollView alloc] initWithFrame:CGRectMake(0, self.topBarHeight + 40, KScreenW, KScreenH-self.topBarHeight-40)];
         _scrollView.contentSize=CGSizeMake(self.view.frame.size.width * self.childViewControllers.count, 0);
         _scrollView.backgroundColor=[UIColor clearColor];
         _scrollView.pagingEnabled=YES;
