@@ -59,9 +59,9 @@
 
 
 #pragma mark -设置TopMenuView的btn的显示文字和tag值
--(void)creatTopMenuViewWithTitlesArray:(NSArray *)titlesArray andTagsArr:(NSArray *)tagsArr{
+-(void)creatTopMenuViewWithTitlesArray:(NSArray *)titlesArray{
     //先计算一下每个btn标签的宽度，预计能不能显示直接显示在屏幕上
-    [self calculateWithTitlesArray:titlesArray andTagsArr:(NSArray *)tagsArr] ;
+    [self calculateWithTitlesArray:titlesArray] ;
     if (!_isOverFlag) {  //加载不可滑动的顶部标签视图
         [self loadNormalTopBtnsMenuView];
     }else {//加载可滑动的顶部标签菜单
@@ -72,7 +72,7 @@
 
 
 #pragma mark -预先计算btn们的总宽度会不会超过屏幕宽度
--(void)calculateWithTitlesArray:(NSArray *)titlesArray andTagsArr:(NSArray *)tagsArr{
+-(void)calculateWithTitlesArray:(NSArray *)titlesArray{
     NSMutableArray *tempArr = [NSMutableArray array];//暂存处理后的btn信息字典
     CGFloat originX = _firstBtnOriginX;//暂存每个btn的X值
     
@@ -81,7 +81,7 @@
         CGSize titleSize=[self sizeWithText:titlesArray[index] font:[UIFont systemFontOfSize:_titleSelectedSize] maxSize:CGSizeMake(MAXFLOAT, self.frame.size.height)];
         NSMutableDictionary *tempDict=[NSMutableDictionary dictionary];
         tempDict[@"btnTitle"]=titlesArray[index];
-        tempDict[@"btnTag"]=tagsArr[index];
+        tempDict[@"btnTag"]=[NSNumber numberWithInt:index];
         tempDict[@"btnOrginX"]=[NSString stringWithFormat:@"%f",originX];;
         tempDict[@"btnWidth"]=[NSString stringWithFormat:@"%f",titleSize.width+_titleSpace];
         [tempArr addObject:tempDict];
@@ -171,8 +171,10 @@
     sender.selected = YES;//将当前选中的按钮设置为选中状态
     [sender.titleLabel setFont:[UIFont systemFontOfSize:_titleSelectedSize]];
     [self moveSelectStatusLineAtBtn:sender];
+    
+    int titleIndex = (int)sender.tag;
     if (self.myBlock) {
-        self.myBlock(sender.tag);
+        self.myBlock(titleIndex);
     }
 }
 

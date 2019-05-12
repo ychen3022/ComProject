@@ -26,8 +26,6 @@
 @property(nonatomic,strong)UIScrollView *scrollView;
 /** 菜单视图对应的titlesArr*/
 @property (nonatomic, strong) NSArray *titlesArr;
-/** 菜单视图对应的titles的tagsArr*/
-@property (nonatomic, strong) NSArray *tagsArr;
 
 @end
 
@@ -101,13 +99,13 @@
         //这个位置可以设置topMenuView的样式
         _topMenuView.titleSelectedColor=[UIColor orangeColor];
         _titlesArr = @[@"精选", @"电视剧", @"电影", @"综艺", @"NBA", @"新闻", @"娱乐", @"音乐"];
-        _tagsArr=@[@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7"];
-        [_topMenuView creatTopMenuViewWithTitlesArray:self.titlesArr andTagsArr:self.tagsArr];
+        [_topMenuView creatTopMenuViewWithTitlesArray:self.titlesArr];
         [self.view addSubview:_topMenuView];
         
         __weak ComMenuBaseViewController *weakSelf=self;
-        self.topMenuView.myBlock=^(NSInteger tag){
-            [weakSelf showViewWithBtnTag:tag];
+        self.topMenuView.myBlock=^(int titleIndex) {
+            [weakSelf showViewWithBtnTag:titleIndex];
+            NSLog(@"番茄 tag=%d",titleIndex);
         };
     }
     return _topMenuView;
@@ -115,7 +113,7 @@
 
 
 #pragma mark -点击MenuView上按钮的事件
--(void)showViewWithBtnTag:(NSInteger)btnTag{
+-(void)showViewWithBtnTag:(int)btnTag{
     //计算滚动的位置
     CGFloat offsetX = btnTag * self.view.frame.size.width;
     self.scrollView.contentOffset = CGPointMake(offsetX, 0);

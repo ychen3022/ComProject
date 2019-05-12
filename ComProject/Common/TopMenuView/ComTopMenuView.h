@@ -11,9 +11,9 @@
 /**
  *  block方法
  *
- *  @param btnTag Menu中选中按钮的Tag
+ *  @param titleIndex Menu中选中按钮的位置
  */
-typedef void(^ComTopMenuViewBlock)(NSInteger btnTag);
+typedef void(^ComTopMenuViewBlock)(int titleIndex);
 
 
 
@@ -52,12 +52,11 @@ typedef void(^ComTopMenuViewBlock)(NSInteger btnTag);
 
 
 /**
- *  设置TopMenuView的btn的显示文字和tag值
+ *  设置TopMenuView的btn的显示文字数组
  *
  *  @param titlesArray btn上显示的文字
- *  @param tagsArr     btn的tag值
  */
-- (void)creatTopMenuViewWithTitlesArray:(NSArray *)titlesArray andTagsArr:(NSArray *)tagsArr;
+- (void)creatTopMenuViewWithTitlesArray:(NSArray *)titlesArray;
 
 
 
@@ -68,13 +67,6 @@ typedef void(^ComTopMenuViewBlock)(NSInteger btnTag);
  */
 -(void)btnAction:(UIButton *)sender;
 
-
-///**
-// *  TopMenuView中button的点击事件
-// *
-// *  @param  sender 点击的button
-// */
-//- (void)moveSelectStatusLineAtBtn:(UIButton *)sender ;
 @end
 
 

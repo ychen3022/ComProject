@@ -22,5 +22,6 @@
 #import "UIImageView+WebCache.h"
 #import "IQKeyboardManager.h"
 #import <JSONModel/JSONModel.h>
+#import <Masonry/Masonry.h>
 
 #endif /* ComProject_pch */
